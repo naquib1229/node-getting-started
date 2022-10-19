@@ -1,7 +1,15 @@
 
-function sayHello(name){
-    console.log('Hello ' +name);
-}
+// console.log(); //global
 
-// sayHello('mosh');
-console.log(window);
+// setTimeout()
+// clearTimeout();
+
+// setInterval();
+// clearInterval();
+
+//Instead of window, node js had global object
+
+//not window.setTimeout(); but global.setTimeout();
+
+var message = '';
+console.log(global.message); //get undefined
