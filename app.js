@@ -1,15 +1,20 @@
 
-// console.log(); //global
+ console.log(module);
 
-// setTimeout()
-// clearTimeout();
 
-// setInterval();
-// clearInterval();
+// Output
 
-//Instead of window, node js had global object
+// Module {
+//     id: '.',
+//     exports: {},
+//     parent: null,
+//     filename: '/home/naquib/first-app/app.js',
+//     loaded: false,
+//     children: [],
+//     paths:
+//      [ '/home/naquib/first-app/node_modules',
+//        '/home/naquib/node_modules',
+//        '/home/node_modules',
+//        '/node_modules' ] }
+  
 
-//not window.setTimeout(); but global.setTimeout();
-
-var message = '';
-console.log(global.message); //get undefined
