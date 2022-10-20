@@ -1,20 +1,6 @@
 
- console.log(module);
+const logger = require('./logger');//loading module
+console.log(logger);
 
-
-// Output
-
-// Module {
-//     id: '.',
-//     exports: {},
-//     parent: null,
-//     filename: '/home/naquib/first-app/app.js',
-//     loaded: false,
-//     children: [],
-//     paths:
-//      [ '/home/naquib/first-app/node_modules',
-//        '/home/naquib/node_modules',
-//        '/home/node_modules',
-//        '/node_modules' ] }
-  
+logger.log('message');// calling function of module
 
