@@ -1,6 +1,6 @@
 
-const logger = require('./logger');//loading module
-console.log(logger);
+const log = require('./logger');//loading function
+//console.log(logger);
 
-logger.log('message');// calling function of module
+log('message');// calling function of module
 
