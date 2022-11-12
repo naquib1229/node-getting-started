@@ -1,17 +1,21 @@
-const path = require('path');
+const os = require('os');
 
-var pathObj = path.parse(__filename);
+var totalMemory = os.totalmem();
+var freeMemory = os.freemem();
 
-console.log(pathObj);
+//console.log('Total Memory: ' + totalMemory);
+
+//Template string
+//ES6 / ES2015 : ECMAScript
+
+console.log(`Total Memory: ${totalMemory}`);
+console.log(`Free Memory: ${freeMemory}`);
+
 
 //output
+
 /* 
-{
-    root: '/',
-    dir: '/home/naquib/Node/node-getting-started',
-    base: 'app.js',
-    ext: '.js',
-    name:'app'
-}
+Total Memory: 7631052800 
+Free Memory: 5072429056
 */
 
