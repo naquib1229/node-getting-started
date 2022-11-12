@@ -1,6 +1,17 @@
+const path = require('path');
 
-const log = require('./logger');//loading function
-//console.log(logger);
+var pathObj = path.parse(__filename);
 
-log('message');// calling function of module
+console.log(pathObj);
+
+//output
+/* 
+{
+    root: '/',
+    dir: '/home/naquib/Node/node-getting-started',
+    base: 'app.js',
+    ext: '.js',
+    name:'app'
+}
+*/
 
