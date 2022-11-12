@@ -7,13 +7,13 @@ emitter.on('messageLogged', (arg) => {
     console.log('Listener called', arg);
 });
 
-//Raise an event
-emitter.emit('messageLogged',{id: 1, url: 'http://'}); //And with this technique we can pass data about the event that just happened
-
+const log = require('./logger');
+log('message');
 
 //output
 
 /* 
-Listener called { id: 1, url: 'http://' }
+message
 */
-
+//Note- here no listener called, because here we are working with two different EventEmitters object
+//so if we register a listener in app.js it is confined to app.js only 
