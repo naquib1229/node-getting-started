@@ -1,19 +1,24 @@
 
 const EventEmitter = require('events');  
-const emitter = new EventEmitter(); 
+
+
+const Logger = require('./logger');
+const logger = new Logger();
+
 
 //Register a listener
-emitter.on('messageLogged', (arg) => { 
+logger.on('messageLogged', (arg) => {  //instead of emitter.on 
     console.log('Listener called', arg);
 });
 
-const log = require('./logger');
-log('message');
+logger.log('message');
+
+
 
 //output
 
 /* 
 message
+Listener called { id: 1, url: 'http://' }
 */
-//Note- here no listener called, because here we are working with two different EventEmitters object
-//so if we register a listener in app.js it is confined to app.js only 
+
