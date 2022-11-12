@@ -1,24 +1,18 @@
 
-const EventEmitter = require('events');  
+const http = require('http');
 
+const server = http.createServer(); //server is an event emitter.
 
-const Logger = require('./logger');
-const logger = new Logger();
+server.on('connection',(socket) => {
+    console.log('New connection ...')
+})
+server.listen(3000); //port 3000
 
-
-//Register a listener
-logger.on('messageLogged', (arg) => {  //instead of emitter.on 
-    console.log('Listener called', arg);
-});
-
-logger.log('message');
-
-
-
+console.log('Listening on port 3000...');
 //output
 
 /* 
-message
-Listener called { id: 1, url: 'http://' }
-*/
+Listening on port 3000...'  //after in browser visiting localhost:3000 we will get New connection ...
+
+*/ 
 
