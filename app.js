@@ -1,21 +1,13 @@
-const os = require('os');
+const fs = require('fs');
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
+const files = fs.readdirSync('./');//not preferred use instead readdir asynchronous version
+console.log(files)
 
-//console.log('Total Memory: ' + totalMemory);
-
-//Template string
-//ES6 / ES2015 : ECMAScript
-
-console.log(`Total Memory: ${totalMemory}`);
-console.log(`Free Memory: ${freeMemory}`);
 
 
 //output
 
 /* 
-Total Memory: 7631052800 
-Free Memory: 5072429056
+ ['.git', 'Node Getting started.odt', 'app.js', 'logger.js']
 */
 
