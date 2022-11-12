@@ -1,26 +1,19 @@
-//Event- A signal that something has happened in our application. Several class in node raises different kinds of events.
-//And in your code, you might be interested to respond to those events.
-//EventEmitter is one of the class of Events. It's one of the core building blocks of Node and a lot of classes are based on this EventEmitter.
 
-const EventEmitter = require('events'); //naming,EventEmitter first letter of every word is upper case indicates class 
-const emitter = new EventEmitter(); //here emitter is an object
-
-//of course order is important here, if you register this listener after calling the emit method, nothing would have happened.
-//Because when we call emit method, this emitter iterates over all the registered listeners and calls them synchronously.
-
+const EventEmitter = require('events');  
+const emitter = new EventEmitter(); 
 
 //Register a listener
-emitter.on('messageLogged', function(){
-    console.log('Listener called');
+emitter.on('messageLogged', function(arg){ //e 
+    console.log('Listener called', arg);
 });
 
 //Raise an event
-emitter.emit('messageLogged');
+emitter.emit('messageLogged',{id: 1, url: 'http://'}); //And with this technique we can pass data about the event that just happened
 
 
 //output
 
 /* 
-Listener called
+Listener called { id: 1, url: 'http://' }
 */
 
